@@ -1,0 +1,38 @@
+<div>
+  <h1>Project List</h1>
+  <ul>
+    <li *ngFor="let project of projects">
+      {{ project.name }}
+      <button (click)="openEditModal(project, 'edit')">Edit</button>
+      <button *ngIf="project" (click)="deleteProject(project.id)">Delete</button>
+    </li>
+  </ul>
+  <button (click)="openEditModal(null, 'create')">Create Project</button>
+</div>
+
+<div *ngIf="showEditModal">
+  <div class="modal">
+    <h2>{{ editMode === 'edit' ? 'Edit Project' : 'Create Project' }}</h2>
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="projectFormData.name" required>
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="projectFormData.description" required></textarea>
+
+      <label for="start_date">Start Date:</label>
+      <input type="date" id="start_date" name="start_date" [(ngModel)]="projectFormData.start_date" required>
+
+      <label for="end_date">End Date:</label>
+      <input type="date" id="end_date" name="end_date" [(ngModel)]="projectFormData.end_date" required>
+
+      <label for="project_manager">Project Manager:</label>
+      <input type="number" id="project_manager" name="project_manager" [(ngModel)]="projectFormData.project_manager"
+        required>
+
+      <button type="submit">{{ editMode === 'edit' ? 'Update Project' : 'Create Project' }}</button>
+    </form>
+    <button (click)="closeEditModal()">Close</button>
+  </div>
+
+</div>

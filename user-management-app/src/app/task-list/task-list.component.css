@@ -1,0 +1,105 @@
+/* task-list.component.css */
+
+/* Style the header */
+h1 {
+    font-size: 24px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  /* Style the task list */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+  /* Style the buttons */
+  button, a {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  button:hover, a:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Modal styles */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .modal form {
+    background: #fff;
+    padding: 20px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  label {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Button styles inside the modal */
+  .modal button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .modal button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style the Cancel button inside the modal */
+  .modal button[type="button"] {
+    background-color: #ccc;
+  }
+  
+  /* Hide the modal by default */
+  .modal[hidden] {
+    display: none;
+  }
+  
+
+@media screen and (max-width: 768px) {
+    .task-list {
+        padding: 10px;
+    }
+}
